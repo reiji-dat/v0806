@@ -21,6 +21,14 @@ namespace v0806
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            Point mp = MousePosition;
+            mp = PointToClient(mp);
+
+            label2.Left = mp.X - label2.Width / 2;
+            label2.Top = mp.Y - label2.Height / 2;
+
+            label2.Text = "" + mp.X + "," + mp.Y;
+
             label1.Left += (int)vx;
             label1.Top += (int)vy;
             if (label1.Left < 0)
@@ -40,7 +48,6 @@ namespace v0806
                 vy = -Math.Abs(vy) * 1.1f;
             }  
         }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
