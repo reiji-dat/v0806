@@ -12,8 +12,8 @@ namespace v0806
 {
     public partial class Form1 : Form
     {
-        int vx = -10;
-        int vy = -10;
+        int vx = -20;
+        int vy = -5;
         public Form1()
         {
             InitializeComponent();
@@ -25,19 +25,19 @@ namespace v0806
             label1.Top += vy;
             if (label1.Left < 0)
             {
-                vx = 10;
+                vx = Math.Abs(vx);
             }
-            else if (label1.Right > ClientSize.Width)
+            if (label1.Right > ClientSize.Width)
             {
-                vx = -10;
+                vx = -Math.Abs(vx);
             }
             if (label1.Top < 0)
             {
-                vy = 10;
+                vy = Math.Abs(vy);
             }
-            else if (label1.Bottom > ClientSize.Height)
+            if (label1.Bottom > ClientSize.Height)
             {
-                vy = -10;
+                vy = -Math.Abs(vy);
             }  
         }
 
