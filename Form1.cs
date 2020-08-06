@@ -24,7 +24,7 @@ namespace v0806
             if (label1.Location.X < 0)
             {
                 vx = 10;
-            }else if(label1.Location.X > 580)
+            }else if(label1.Location.X > 570)
             {
                 vx = -10;
             }
@@ -32,7 +32,7 @@ namespace v0806
             {
                 vy = 10;
             }
-            else if (label1.Location.Y > 350)
+            else if (label1.Location.Y > 340)
             {
                 vy = -10;
             }
