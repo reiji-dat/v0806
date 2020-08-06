@@ -21,24 +21,31 @@ namespace v0806
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (label1.Location.X < 0)
+            label1.Left += vx;
+            label1.Top += vy;
+            if (label1.Left < 0)
             {
                 vx = 10;
             }
-            else if(label1.Location.X > 570)
+            else if (label1.Right > ClientSize.Width)
             {
                 vx = -10;
             }
-            if (label1.Location.Y < 0)
+            if (label1.Top < 0)
             {
                 vy = 10;
             }
-            else if (label1.Location.Y > 340)
+            else if (label1.Bottom > ClientSize.Height)
             {
                 vy = -10;
-            }
-            label1.Left += vx;
-            label1.Top += vy;
+            }  
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //MessageBox.Show("幅" + ClientSize.Width);
+            //MessageBox.Show("高さ" + ClientSize.Height);
         }
     }
 }
